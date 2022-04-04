@@ -9,4 +9,79 @@ html,body,section,.page{
     margin: 0;
     padding: 0;
     transition: all is cubic-bezier(.5, -0.005, 0.2, 1)!important;
+    -webkit-animation: all 1s cubic-bezier(.5, -0.005, 0.2, 1) !important;
+    color: #fff;
+    background: #374046;
+    overflow: hidden;
+}
+
+section{
+    width: 400%;
+}
+
+.page{
+    position: absolute;
+}
+
+#p1{
+    left: 0;
+}
+
+#p2{
+    left: 100%;
+    background: #FF5722;
+}
+
+#p3{
+    left: 200%;
+    background: #593c1f;
+}
+
+#p4{
+    left: 300%;
+    background: deeppink;
+}
+
+ul{
+    position: fixed;
+    z-index: 1;
+}
+
+#t1:target .page#p1{
+    transform: translateX(0)
+}
+
+#t2:target .page#p2{
+    transform: translateX(-90%)
+}
+
+#t3:target .page#p3{
+    transform: translateX(-190%)
+}
+
+#t4:target .page#p4{
+    transform: translateX(-290%)
+}
+
+#t2:target .page#p1, #t3:target .page#p1, #t4:target .page#p1{
+    background: black;
+}
+
+#t2:target .page#p1 .icon, #t3:target .page#p1 .icon, #t4:target .page#p1 .icon{
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.icon{
+    color: #fff;
+    font-size: 32px;
+    display: block;
+}
+
+ul .icon:hover{
+    opacity: 0.6;
+}
+
+#p1 .icon .title {
+    margin-bottom: 20px;
 }
